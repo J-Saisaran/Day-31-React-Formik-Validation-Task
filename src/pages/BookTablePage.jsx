@@ -4,6 +4,7 @@ import { Typography, IconButton, Dialog, DialogTitle } from '@mui/material';
 import AddIcon from '@mui/icons-material/Add';
 import BookTable from '../components/BookTable';
 import BookForm from '../components/BookForm';
+import './BookTablePage.css'; // Import the CSS file for additional styling
 
 const BookTablePage = () => {
   const [books, setBooks] = useState([]);
@@ -35,9 +36,9 @@ const BookTablePage = () => {
   };
 
   return (
-    <div>
+    <div className="book-table-container">
       <Typography variant="h4" gutterBottom>Books Management</Typography>
-      <IconButton onClick={() => handleOpenForm()}>
+      <IconButton onClick={() => handleOpenForm()} color="primary">
         <AddIcon />
       </IconButton>
       <BookTable books={books} onEdit={handleOpenForm} onDelete={handleDeleteBook} />

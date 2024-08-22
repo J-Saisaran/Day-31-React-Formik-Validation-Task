@@ -4,6 +4,7 @@ import { Typography, IconButton, Dialog, DialogTitle } from '@mui/material';
 import AddIcon from '@mui/icons-material/Add';
 import AuthorTable from '../components/AuthorTable';
 import AuthorForm from '../components/AuthorForm';
+import './AuthorTablePage.css'; // Import the CSS file for additional styling
 
 const AuthorTablePage = () => {
   const [authors, setAuthors] = useState([]);
@@ -35,9 +36,9 @@ const AuthorTablePage = () => {
   };
 
   return (
-    <div>
+    <div className="author-table-container">
       <Typography variant="h4" gutterBottom>Authors Management</Typography>
-      <IconButton onClick={() => handleOpenForm()}>
+      <IconButton onClick={() => handleOpenForm()} color="primary">
         <AddIcon />
       </IconButton>
       <AuthorTable authors={authors} onEdit={handleOpenForm} onDelete={handleDeleteAuthor} />
